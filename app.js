@@ -4,7 +4,7 @@ const fs=require("fs");
 const path=require("path");
 console.log(__dirname);
 // console.log(path.join(__dirname+"/index.html"))
-
+const port=process.env.PORT  || 8000;
 app.use(express.static(__dirname ));
 const alternateview=path.join(__dirname+"/viewii");
 const partialpath=path.join(__dirname+"/partials");
@@ -21,6 +21,6 @@ app.get('/submit' , (req, res)=>
     res.send("hogya bhai submit");
 
 })
-app.listen(8000, ()=>{
+app.listen(port, ()=>{
     console.log("listinig by express");
 })
